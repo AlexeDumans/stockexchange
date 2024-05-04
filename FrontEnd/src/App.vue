@@ -2,15 +2,16 @@
   <a-layout id="main-layout" class="layout">
     <a-layout-header>
       <div class="logo">模拟股票交易系统</div>
-      <a-menu
-        theme="dark"
-        mode="horizontal"
-        :default-selected-keys="current"
-        :style="{ lineHeight: '64px' }"
-      >
+      <a-menu theme="dark" mode="horizontal" :default-selected-keys="current" :style="{ lineHeight: '64px' }">
+        
         <a-menu-item key="/" v-if="user_info.role == 'user'">
-          <router-link to="/">自选股</router-link>
+          <router-link to="/">行情指数</router-link>
         </a-menu-item>
+
+        <a-menu-item key="/selfstock" v-if="user_info.role == 'user'">
+          <router-link to="/selfstock">自选股</router-link>
+        </a-menu-item>
+
         <a-menu-item key="/orderlist" v-if="user_info.role == 'user'">
           <router-link to="/orderlist">委托列表</router-link>
         </a-menu-item>
@@ -46,14 +47,14 @@
         <router-view :user_info="user_info" />
       </div>
     </a-layout-content>
-    <a-layout-footer style="text-align: center">
+    <!-- <a-layout-footer style="text-align: center">
       <Footer />
-    </a-layout-footer>
+    </a-layout-footer> -->
   </a-layout>
 </template>
 
 <script>
-import Footer from "@/components/Footer.vue";
+// import Footer from "@/components/Footer.vue";
 
 export default {
   data() {
@@ -64,13 +65,13 @@ export default {
     };
   },
   components: {
-    Footer,
+    // Footer,
   },
   beforeUpdate() {
     // 加载菜单
     this.current[0] = this.$route.path;
   },
-  updated() {},
+  updated() { },
   mounted() {
     this.loadUserInfo();
   },

@@ -11,6 +11,11 @@ const routes = [
     component: () => import('../views/auth/Home.vue'),
   },
   {
+    path: '/selfstock',
+    name: 'SelfStock',
+    component: () => import('../views/auth/SelfStock.vue'),
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/auth/Login.vue'),

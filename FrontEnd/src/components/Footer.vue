@@ -1,6 +1,6 @@
 <template>
   <div>
-      模拟股票交易系统-HanLinqi
+      模拟股票交易系统
   </div>
 </template>
 

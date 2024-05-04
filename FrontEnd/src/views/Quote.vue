@@ -12,6 +12,7 @@
           <div id="DayChart"></div>
         </div>
       </a-tab-pane>
+
       <a-tab-pane key="Day" tab="日K线图">
         <a-spin :spinning="spinning" tip="加载中...">
           <div class="chart">
@@ -19,6 +20,7 @@
           </div>
         </a-spin>
       </a-tab-pane>
+
       <a-tab-pane key="Week" tab="周K线图">
         <a-spin :spinning="spinning" tip="加载中...">
           <div class="chart">
@@ -26,6 +28,7 @@
           </div>
         </a-spin>
       </a-tab-pane>
+
       <a-tab-pane key="Month" tab="月K线图">
         <a-spin :spinning="spinning" tip="加载中...">
           <div class="chart">
@@ -33,6 +36,7 @@
           </div>
         </a-spin>
       </a-tab-pane>
+
     </a-tabs>
   </div>
 </template>
