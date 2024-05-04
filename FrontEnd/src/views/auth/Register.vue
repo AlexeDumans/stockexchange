@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <div class="background">
     <a-form
       id="components-form-normal-register"
       :form="form"
       @submit="handleSubmit"
     >
+      <div class="image-container">
+        <img src="../../assets/logo.jpg" alt="Image" class="image" />
+      </div>
       <a-form-item v-bind="formItemLayout" label="手机号">
         <a-input
           v-decorator="[
@@ -177,6 +180,32 @@ export default {
 </script>
 
 <style scoped>
+
+.background {
+  /* 设置背景图样式 */
+  background-image: url('../../assets/beijing.jpg');
+  background-size: cover;
+  background-position: center;
+  /* 充满整个屏幕 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 使登录框内容垂直水平居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-container {
+  text-align: center;
+  margin-bottom: 20px; /* 调整图片与输入框之间的距离 */
+}
+
+.image {
+  width: 250px; /* 根据需要调整图片大小 */
+  height: auto;
+}
 #components-form-normal-register {
   min-width: 450px;
   width: 600px;
