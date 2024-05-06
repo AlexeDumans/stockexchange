@@ -1,7 +1,10 @@
 <template>
   <a-layout id="main-layout" class="layout">
     <a-layout-header>
-      <div class="logo">模拟股票交易系统</div>
+      <div class="logo">
+        <img src="../src/assets/logo.jpg" alt="Logo" class="logo-img" />
+        <div class="logo-text">模拟股票交易系统</div>
+      </div>
       <a-menu theme="dark" mode="horizontal" :default-selected-keys="current" :style="{ lineHeight: '64px' }">
         
         <a-menu-item key="/" v-if="user_info.role == 'user'">
@@ -122,13 +125,20 @@ export default {
 
 <style>
 #main-layout .logo {
-  width: 10rem;
-  height: 31px;
-  color: whitesmoke;
-  font-weight: 700;
-  font-size: 1rem;
   text-align: center;
   /* margin: 16px 24px 16px 0; */
   float: left;
+  display: flex;
+  margin-right: 10px;
+}
+#main-layout .logo-img{
+  width:4rem;
+  margin-right: 10px;
+}
+#main-layout .logo-text{
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-left: 5px;
 }
 </style>
